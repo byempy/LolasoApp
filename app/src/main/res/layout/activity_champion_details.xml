@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChampionDetailsActivity"
+    tools:layout_editor_absoluteY="73dp">
+
+    <ImageView
+        android:id="@+id/imgSplash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/aatrox0"
+        app:layout_constraintBottom_toTopOf="@+id/txtDName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtDName" />
+
+    <TextView
+        android:id="@+id/txtDName"
+        android:layout_width="348dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="54dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="116dp"
+        android:text="Champion"
+        android:textColor="#FFFFFF"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtLore"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtDTitle"
+        android:layout_width="350dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="174dp"
+        android:text="Title"
+        android:textColor="#FFFFFF"
+        android:textSize="26sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtLore"
+        android:layout_width="0dp"
+        android:layout_height="275dp"
+        android:gravity="start"
+        android:padding="8dp"
+        android:text="test"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDName" />
+
+</android.support.constraint.ConstraintLayout>
