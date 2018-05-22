@@ -7,10 +7,6 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 
-import net.rithms.riot.api.endpoints.static_data.dto.Champion;
-
-import java.util.ArrayList;
-
 public class SplashActivity extends AppCompatActivity {
 
     @Override
@@ -18,23 +14,18 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen);
 
-        final Intent i = new Intent(this, MainActivity.class);
         ImageView imgIcon = findViewById(R.id.imgIcon);
-
         Glide.with(this).load(R.drawable.ic_zilean).into(imgIcon);
 
-        Thread hilo = new Thread(new Runnable() {
+        Thread hilo = new Thread(){
             @Override
             public void run() {
-                try {
-                    Thread.sleep(4000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                RiotApiHelper.loadChampions();
+                Intent i = new Intent(SplashActivity.this, MainActivity.class);
                 startActivity(i);
                 finish();
             }
-        });
+        };
 
          hilo.start();
     }

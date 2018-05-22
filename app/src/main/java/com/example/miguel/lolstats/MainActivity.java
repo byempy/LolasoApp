@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
     private ListView lstChampions;
     private TextView filter;
     private ChampionAdapter championAdapter;
-    private ArrayList<Champion> championsData = new ArrayList<>();
     private ArrayList<Champion> championDataFilter = new ArrayList<>();
 
     @Override
@@ -30,8 +29,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        championsData = RiotApiHelper.getAllChampions();
-        championDataFilter.addAll(championsData);
+        championDataFilter.addAll(RiotApiHelper.championsData);
 
         filter = findViewById(R.id.txtFilter);
         filter.addTextChangedListener(new TextWatcher() {
@@ -61,14 +59,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void filterList(){
         championDataFilter.clear();
-        for(Champion c: championsData){
+        for(Champion c: RiotApiHelper.championsData){
             if(c.getName().toLowerCase().contains(filter.getText().toString().toLowerCase())){
                 championDataFilter.add(c);
             }
         }
 
         if(filter.getText().toString().equals("")){
-            championDataFilter.addAll(championsData);
+            championDataFilter.addAll(RiotApiHelper.championsData);
         }
 
         championAdapter.notifyDataSetChanged();

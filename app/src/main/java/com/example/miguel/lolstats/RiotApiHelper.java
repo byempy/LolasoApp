@@ -27,8 +27,10 @@ public class RiotApiHelper {
     private static ApiConfig config = new ApiConfig().setKey(APIKEY);
     private static final RiotApi api = new RiotApi(config);
 
-    public static ArrayList<Champion> getAllChampions(){
-        final ArrayList<Champion> championsData = new ArrayList<>();
+    public static ArrayList<Champion> championsData = new ArrayList<>();
+
+    public static void loadChampions(){
+        championsData.clear();
         Thread hilo = new Thread(){
             @Override
             public void run(){
@@ -50,8 +52,6 @@ public class RiotApiHelper {
         }catch(Exception e){
             Log.e("ERROR HILO", e.getMessage());
         }
-
-        return championsData;
     }
 
     public static String getCurrentVersion(){
