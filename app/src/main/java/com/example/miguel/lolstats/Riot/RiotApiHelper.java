@@ -1,4 +1,4 @@
-package com.example.miguel.lolstats;
+package com.example.miguel.lolstats.Riot;
 
 import android.util.Log;
 
@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class RiotApiHelper {
-    private static final String APIKEY = "RGAPI-7ad761a9-67e2-4f9c-a1cc-8fdb7d7eba69";
+    private static final String APIKEY = "RGAPI-03ca073f-ecc5-4fc2-8592-4ebad6ffd00b";
     private static final String VERSIONURL = "http://ddragon.leagueoflegends.com/api/versions.json";
 
     private static ApiConfig config = new ApiConfig().setKey(APIKEY);

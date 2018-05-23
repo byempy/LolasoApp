@@ -1,4 +1,4 @@
-package com.example.miguel.lolstats;
+package com.example.miguel.lolstats.Adapters;
 
 import android.content.Context;
 import android.graphics.BitmapFactory;
@@ -14,6 +14,8 @@ import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.miguel.lolstats.R;
 
 import net.rithms.riot.api.RiotApi;
 import net.rithms.riot.api.endpoints.static_data.dto.Champion;

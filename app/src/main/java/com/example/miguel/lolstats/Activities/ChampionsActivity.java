@@ -1,6 +1,5 @@
-package com.example.miguel.lolstats;
+package com.example.miguel.lolstats.Activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,16 +7,19 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.example.miguel.lolstats.Adapters.ChampionAdapter;
+import com.example.miguel.lolstats.R;
+import com.example.miguel.lolstats.Riot.RiotApiHelper;
 
 import net.rithms.riot.api.endpoints.static_data.dto.Champion;
 
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class ChampionsActivity extends AppCompatActivity {
 
     private ListView lstChampions;
     private TextView filter;

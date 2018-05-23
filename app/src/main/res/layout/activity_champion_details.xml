@@ -4,55 +4,91 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChampionDetailsActivity"
-    tools:layout_editor_absoluteY="73dp">
+    tools:context=".Activities.ChampionDetailsActivity"
+    tools:layout_editor_absoluteY="81dp">
 
     <ImageView
         android:id="@+id/imgSplash"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="41dp"
         android:src="@drawable/aatrox0"
-        app:layout_constraintBottom_toTopOf="@+id/txtDName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txtDName" />
+        app:layout_constraintBottom_toTopOf="@+id/pager"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-14dp" />
 
     <TextView
         android:id="@+id/txtDName"
-        android:layout_width="348dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="54dp"
+        android:layout_width="0dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="38dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="116dp"
         android:text="Champion"
         android:textColor="#FFFFFF"
         android:textSize="50sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtLore"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/txtDTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/txtDTitle"
-        android:layout_width="350dp"
-        android:layout_height="57dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="174dp"
         android:text="Title"
         android:textColor="#FFFFFF"
         android:textSize="26sp"
         android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/tabLayout"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/txtLore"
+    <!-- our tablayout to display tabs  -->
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
         android:layout_width="0dp"
-        android:layout_height="275dp"
-        android:gravity="start"
-        android:padding="8dp"
-        android:text="test"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDName" />
+        app:layout_constraintTop_toBottomOf="@+id/imgSplash" />
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="235dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDTitle">
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/tbBuild"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Build" />
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/tbRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Win rate" />
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/tbInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Info" />
+    </android.support.design.widget.TabLayout>
 
 </android.support.constraint.ConstraintLayout>

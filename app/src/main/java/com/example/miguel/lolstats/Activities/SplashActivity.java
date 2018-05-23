@@ -1,4 +1,4 @@
-package com.example.miguel.lolstats;
+package com.example.miguel.lolstats.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.example.miguel.lolstats.R;
+import com.example.miguel.lolstats.Riot.RiotApiHelper;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -21,7 +23,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 RiotApiHelper.loadChampions();
-                Intent i = new Intent(SplashActivity.this, MainActivity.class);
+                Intent i = new Intent(SplashActivity.this, ChampionsActivity.class);
                 startActivity(i);
                 finish();
             }
