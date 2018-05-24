@@ -20,13 +20,14 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class RiotApiHelper {
-    private static final String APIKEY = "RGAPI-03ca073f-ecc5-4fc2-8592-4ebad6ffd00b";
+    private static final String APIKEY = "RGAPI-1cc2ac3d-727d-4ab0-bf22-8e868fff4e4a";
     private static final String VERSIONURL = "http://ddragon.leagueoflegends.com/api/versions.json";
 
     private static ApiConfig config = new ApiConfig().setKey(APIKEY);
     private static final RiotApi api = new RiotApi(config);
 
     public static ArrayList<Champion> championsData = new ArrayList<>();
+
 
     public static void loadChampions(){
         championsData.clear();
@@ -61,23 +62,34 @@ public class RiotApiHelper {
     }
 
     private static String getJsonVersion(){
-        HttpURLConnection connection = null;
-        BufferedReader reader =  null;
-        StringBuilder stringBuilder = new StringBuilder();
+
+        final StringBuilder stringBuilder = new StringBuilder();
+
+        Thread hilo = new Thread(){
+            @Override
+            public void run(){
+                try {
+                    URL url = new URL(VERSIONURL);
+                    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+
+                    String line;
+
+                    while((line = reader.readLine()) != null) {
+                        stringBuilder.append(line);
+                    }
+
+
+                }catch(Exception e){
+                    e.printStackTrace();
+                }
+            }
+        };
+        hilo.start();
 
         try {
-            URL url = new URL(VERSIONURL);
-            connection = (HttpURLConnection) url.openConnection();
-            reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-
-            String line;
-
-            while((line = reader.readLine()) != null) {
-                stringBuilder.append(line);
-            }
-
-
-        }catch(Exception e){
+            hilo.join();
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
 

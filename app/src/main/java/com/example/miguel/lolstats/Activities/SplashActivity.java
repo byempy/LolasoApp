@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.example.miguel.lolstats.Models.Campeon;
 import com.example.miguel.lolstats.R;
 import com.example.miguel.lolstats.Riot.RiotApiHelper;
 
