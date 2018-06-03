@@ -1,15 +1,20 @@
 package com.example.miguel.lolstats.Adapters;
 
 import android.os.Bundle;
+import android.provider.Telephony;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+import com.example.miguel.lolstats.ApisHelper.ChampionggApiHelper;
 import com.example.miguel.lolstats.Fragments.BuildFragment;
 import com.example.miguel.lolstats.Fragments.InfoFragment;
 import com.example.miguel.lolstats.Fragments.RateFragment;
+import com.example.miguel.lolstats.Models.Campeon;
 
 import net.rithms.riot.api.endpoints.static_data.dto.Champion;
+
+import java.util.ArrayList;
 
 public class PageAdapter extends FragmentStatePagerAdapter {
 
@@ -17,6 +22,8 @@ public class PageAdapter extends FragmentStatePagerAdapter {
     int tabCount;
     Champion champion;
     InfoFragment ifrag;
+    RateFragment rfrag;
+    BuildFragment bfrag;
 
     //Constructor to the class
     public PageAdapter(FragmentManager fm, int tabCount, Champion champion) {
@@ -25,6 +32,8 @@ public class PageAdapter extends FragmentStatePagerAdapter {
         this.tabCount= tabCount;
         this.champion = champion;
         ifrag = new InfoFragment();
+        rfrag = new RateFragment();
+        bfrag = new BuildFragment();
     }
 
     //Overriding method getItem
@@ -35,9 +44,11 @@ public class PageAdapter extends FragmentStatePagerAdapter {
         bl.putSerializable("champion", champion);
         switch (position) {
             case 0:
-                 return new BuildFragment();
+                bfrag.setArguments(bl);
+                 return bfrag;
             case 1:
-                return new RateFragment();
+                rfrag.setArguments(bl);
+                return rfrag;
             case 2:
                 ifrag.setArguments(bl);
                 return ifrag;

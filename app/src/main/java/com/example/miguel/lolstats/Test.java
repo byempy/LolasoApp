@@ -1,6 +1,6 @@
 package com.example.miguel.lolstats;
 
-import com.example.miguel.lolstats.Riot.RiotApiHelper;
+import com.example.miguel.lolstats.ApisHelper.RiotApiHelper;
 
 import net.rithms.riot.api.ApiConfig;
 import net.rithms.riot.api.RiotApi;

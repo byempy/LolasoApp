@@ -5,8 +5,17 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
+import com.example.miguel.lolstats.Adapters.BuildAdapter;
+import com.example.miguel.lolstats.Adapters.RateAdapter;
+import com.example.miguel.lolstats.ApisHelper.ChampionggApiHelper;
+import com.example.miguel.lolstats.Models.Campeon;
 import com.example.miguel.lolstats.R;
+
+import net.rithms.riot.api.endpoints.static_data.dto.Champion;
+
+import java.util.ArrayList;
 
 public class BuildFragment extends Fragment {
 
@@ -19,6 +28,16 @@ public class BuildFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_build, container, false);
+        Champion champ = (Champion)getArguments().get("champion");
+
+        ChampionggApiHelper api = new ChampionggApiHelper();
+        ArrayList<Campeon> campeon = api.getCampeon(champ.getId());
+        View v =  inflater.inflate(R.layout.fragment_build, container, false);
+
+        ListView lstRates = v.findViewById(R.id.lstBuild);
+        BuildAdapter rAdapter = new BuildAdapter(getContext(), campeon);
+        lstRates.setAdapter(rAdapter);
+
+        return v;
     }
 }

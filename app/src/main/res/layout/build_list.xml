@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp">
+
+
+    <ImageView
+        android:id="@+id/imgWin4"
+        android:layout_width="53dp"
+        android:layout_height="54dp"
+        android:layout_below="@+id/textView5"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/ahri" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/separador"
+        android:paddingTop="5dp"
+        android:text="Build más frequente:"
+        android:textSize="20dp" />
+
+    <ImageView
+        android:id="@+id/imgFre6"
+        android:layout_width="53dp"
+        android:layout_height="54dp"
+        android:layout_alignTop="@+id/imgFre1"
+        android:layout_toEndOf="@+id/imgWin5"
+        app:srcCompat="@drawable/ahri" />
+
+    <ImageView
+        android:id="@+id/imgFre5"
+        android:layout_width="53dp"
+        android:layout_height="54dp"
+        android:layout_alignTop="@+id/imgFre1"
+        android:layout_toEndOf="@+id/imgWin4"
+        app:srcCompat="@drawable/ahri" />
+
+    <ImageView
+        android:id="@+id/imgFre4"
+        android:layout_width="53dp"
+        android:layout_height="54dp"
+        android:layout_above="@+id/textView5"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/ahri" />
+
+    <ImageView
+        android:id="@+id/imgFre3"
+        android:layout_width="53dp"
+        android:layout_height="54dp"
+        android:layout_alignTop="@+id/imgFre1"
+        android:layout_toEndOf="@+id/imgWin2"
+        app:srcCompat="@drawable/ahri" />
+
+    <ImageView
+        android:id="@+id/imgWin1"
+        android:layout_width="53dp"
+        android:layout_height="54dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView5"
+        app:srcCompat="@drawable/ahri" />
+
+    <ImageView
+        android:id="@+id/imgFre2"
+        android:layout_width="53dp"
+        android:layout_height="54dp"
+        android:layout_above="@+id/textView5"
+        android:layout_alignStart="@+id/imgWin2"
+        app:srcCompat="@drawable/ahri" />
+
+    <ImageView
+        android:id="@+id/imgWin6"
+        android:layout_width="53dp"
+        android:layout_height="54dp"
+        android:layout_below="@+id/textView5"
+        android:layout_toEndOf="@+id/imgWin5"
+        app:srcCompat="@drawable/ahri" />
+
+    <ImageView
+        android:id="@+id/imgWin5"
+        android:layout_width="53dp"
+        android:layout_height="54dp"
+        android:layout_below="@+id/textView5"
+        android:layout_toEndOf="@+id/imgWin4"
+        app:srcCompat="@drawable/ahri" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/imgFre1"
+        android:paddingTop="5dp"
+        android:text="Build con más win rate:"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/txtBuildRol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="TOP"
+        android:textSize="30dp" />
+
+    <View
+        android:id="@+id/separador"
+        android:layout_width="fill_parent"
+        android:layout_height="10dp"
+        android:layout_below="@+id/txtBuildRol"
+        android:background="@android:drawable/divider_horizontal_dim_dark" />
+
+    <ImageView
+        android:id="@+id/imgWin2"
+        android:layout_width="53dp"
+        android:layout_height="54dp"
+        android:layout_below="@+id/textView5"
+        android:layout_toEndOf="@+id/imgFre1"
+        app:srcCompat="@drawable/ahri" />
+
+    <ImageView
+        android:id="@+id/imgFre1"
+        android:layout_width="53dp"
+        android:layout_height="54dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView"
+        app:srcCompat="@drawable/ahri" />
+
+    <ImageView
+        android:id="@+id/imgWin3"
+        android:layout_width="53dp"
+        android:layout_height="54dp"
+        android:layout_below="@+id/textView5"
+        android:layout_toEndOf="@+id/imgWin2"
+        app:srcCompat="@drawable/ahri" />
+
+
+</RelativeLayout>

@@ -9,10 +9,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.miguel.lolstats.Adapters.ChampionAdapter;
 import com.example.miguel.lolstats.R;
-import com.example.miguel.lolstats.Riot.RiotApiHelper;
+import com.example.miguel.lolstats.ApisHelper.RiotApiHelper;
 
 import net.rithms.riot.api.endpoints.static_data.dto.Champion;
 
@@ -32,6 +33,11 @@ public class ChampionsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         championDataFilter.addAll(RiotApiHelper.championsData);
+
+        if(RiotApiHelper.championsData.size()==0){
+            Toast.makeText(getApplicationContext(),"API Rate Limit exceeded.. Retry later", Toast.LENGTH_LONG).show();
+            finish();
+        }
 
         filter = findViewById(R.id.txtFilter);
         filter.addTextChangedListener(new TextWatcher() {

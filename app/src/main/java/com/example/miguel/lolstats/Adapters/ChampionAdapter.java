@@ -14,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.miguel.lolstats.R;
 
@@ -65,11 +66,15 @@ public class ChampionAdapter extends BaseAdapter {
         TextView txtTitle = v.findViewById(R.id.txtTitle);
         txtTitle.setText(champion.getTitle());
 
-        final ImageView imgChampion = v.findViewById(R.id.imgChampion);
-        String uri = "@drawable/" + champion.getImage().getFull().replace(".png", "").toLowerCase();
-        int imageResource = context.getResources().getIdentifier(uri, null, context.getPackageName());
-        Drawable imagen = context.getDrawable(imageResource);
-        imgChampion.setImageDrawable(imagen);
+        try{
+            final ImageView imgChampion = v.findViewById(R.id.imgChampion);
+            String uri = "@drawable/" + champion.getImage().getFull().replace(".png", "").toLowerCase();
+            int imageResource = context.getResources().getIdentifier(uri, null, context.getPackageName());
+            Drawable imagen = context.getDrawable(imageResource);
+            imgChampion.setImageDrawable(imagen);
+        }catch(Exception e){
+            Toast.makeText(context, "Error no se pudo cargar una imagen..", Toast.LENGTH_SHORT).show();
+        }
 
         return v;
     }

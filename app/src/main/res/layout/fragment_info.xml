@@ -14,11 +14,19 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="10dp">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Historia"
             android:textSize="25sp"/>
+
+        <View
+            android:id="@+id/separador3"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_below="@+id/txtBuildRol"
+            android:background="@android:drawable/divider_horizontal_dim_dark" />
 
         <TextView
             android:id="@+id/txtLore"
@@ -33,6 +41,13 @@
             android:layout_height="match_parent"
             android:text="Habilidades"
             android:textSize="25sp" />
+
+        <View
+            android:id="@+id/separador4"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_below="@+id/txtBuildRol"
+            android:background="@android:drawable/divider_horizontal_dim_dark" />
 
         <RelativeLayout
             android:id="@+id/rlLayout"

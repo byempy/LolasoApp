@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.miguel.lolstats.R;
-import com.example.miguel.lolstats.Riot.RiotApiHelper;
+import com.example.miguel.lolstats.ApisHelper.RiotApiHelper;
 import com.example.miguel.lolstats.Utils.BitmapThread;
 
 import net.rithms.riot.api.endpoints.static_data.dto.Champion;

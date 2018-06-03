@@ -1,4 +1,4 @@
-package com.example.miguel.lolstats.Riot;
+package com.example.miguel.lolstats.ApisHelper;
 
 import android.util.Log;
 
@@ -6,8 +6,6 @@ import com.google.gson.Gson;
 
 import net.rithms.riot.api.ApiConfig;
 import net.rithms.riot.api.RiotApi;
-import net.rithms.riot.api.endpoints.league.constant.LeagueQueue;
-import net.rithms.riot.api.endpoints.league.dto.LeagueList;
 import net.rithms.riot.api.endpoints.static_data.constant.ChampionListTags;
 import net.rithms.riot.api.endpoints.static_data.constant.Locale;
 import net.rithms.riot.api.endpoints.static_data.dto.Champion;
@@ -22,7 +20,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class RiotApiHelper {
-    private static final String APIKEY = "RGAPI-1cc2ac3d-727d-4ab0-bf22-8e868fff4e4a";
+    private static final String APIKEY = "RGAPI-a8b91def-e5b5-49ac-bc45-73d5d280dd84";
     private static final String VERSIONURL = "http://ddragon.leagueoflegends.com/api/versions.json";
 
     private static ApiConfig config = new ApiConfig().setKey(APIKEY);
@@ -31,6 +29,17 @@ public class RiotApiHelper {
     public static ArrayList<Champion> championsData = new ArrayList<>();
 
 
+    public Champion getChampion(int id){
+        Champion champ = null;
+        for(Champion c: championsData){
+            if(c.getId()==id){
+                champ = c;
+                break;
+            }
+        }
+
+        return champ;
+    }
     public static void loadChampions(){
         championsData.clear();
         Thread hilo = new Thread(){
@@ -44,7 +53,7 @@ public class RiotApiHelper {
                     }
 
                 }catch(Exception e){
-                    Log.e("ERROR API",e.getMessage());
+                    Log.e("ERROR API RIOT",e.getMessage());
                 }
             }
         };
