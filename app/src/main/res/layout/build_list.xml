@@ -7,16 +7,24 @@
 
 
     <ImageView
+        android:id="@+id/imgFre4"
+        android:layout_width="53dp"
+        android:layout_height="54dp"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/ahri" />
+
+    <ImageView
         android:id="@+id/imgWin4"
         android:layout_width="53dp"
         android:layout_height="54dp"
-        android:layout_below="@+id/textView5"
+        android:layout_alignTop="@+id/imgWin1"
         android:layout_centerHorizontal="true"
         app:srcCompat="@drawable/ahri" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/separador"
@@ -28,24 +36,16 @@
         android:id="@+id/imgFre6"
         android:layout_width="53dp"
         android:layout_height="54dp"
-        android:layout_alignTop="@+id/imgFre1"
-        android:layout_toEndOf="@+id/imgWin5"
+        android:layout_below="@+id/textView"
+        android:layout_toEndOf="@+id/imgFre5"
         app:srcCompat="@drawable/ahri" />
 
     <ImageView
         android:id="@+id/imgFre5"
         android:layout_width="53dp"
         android:layout_height="54dp"
-        android:layout_alignTop="@+id/imgFre1"
-        android:layout_toEndOf="@+id/imgWin4"
-        app:srcCompat="@drawable/ahri" />
-
-    <ImageView
-        android:id="@+id/imgFre4"
-        android:layout_width="53dp"
-        android:layout_height="54dp"
-        android:layout_above="@+id/textView5"
-        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/textView"
+        android:layout_toEndOf="@+id/imgFre4"
         app:srcCompat="@drawable/ahri" />
 
     <ImageView
@@ -90,7 +90,7 @@
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/imgFre1"

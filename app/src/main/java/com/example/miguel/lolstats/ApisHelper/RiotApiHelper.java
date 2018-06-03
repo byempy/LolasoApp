@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class RiotApiHelper {
-    private static final String APIKEY = "RGAPI-a8b91def-e5b5-49ac-bc45-73d5d280dd84";
+    private static final String APIKEY = "RGAPI-cd12f599-1202-4c4a-9888-c0676f9dc047";
     private static final String VERSIONURL = "http://ddragon.leagueoflegends.com/api/versions.json";
 
     private static ApiConfig config = new ApiConfig().setKey(APIKEY);
