@@ -1,20 +1,15 @@
 package com.example.miguel.lolstats.Adapters;
 
 import android.os.Bundle;
-import android.provider.Telephony;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.example.miguel.lolstats.ApisHelper.ChampionggApiHelper;
 import com.example.miguel.lolstats.Fragments.BuildFragment;
 import com.example.miguel.lolstats.Fragments.InfoFragment;
 import com.example.miguel.lolstats.Fragments.RateFragment;
-import com.example.miguel.lolstats.Models.Campeon;
 
 import net.rithms.riot.api.endpoints.static_data.dto.Champion;
-
-import java.util.ArrayList;
 
 public class PageAdapter extends FragmentStatePagerAdapter {
 

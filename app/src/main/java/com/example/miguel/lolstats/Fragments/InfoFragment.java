@@ -3,6 +3,7 @@ package com.example.miguel.lolstats.Fragments;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +28,7 @@ public class InfoFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_info, container, false);
 
-        Champion champ = (Champion)getArguments().get("champion");
+        Champion champ = (Champion) getArguments().get("champion");
 
         TextView txtLore = v.findViewById(R.id.txtLore);
         txtLore.setText(champ.getLore());
@@ -81,6 +82,7 @@ public class InfoFragment extends Fragment {
 
         ImageView imgPasive = v.findViewById(R.id.imgPasive);
         imgPasive.setImageBitmap(getImgPassive(champ.getPassive().getImage().getFull()));
+
 
         return v;
     }

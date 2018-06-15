@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.example.miguel.lolstats.Adapters.BuildAdapter;
-import com.example.miguel.lolstats.Adapters.RateAdapter;
 import com.example.miguel.lolstats.ApisHelper.ChampionggApiHelper;
 import com.example.miguel.lolstats.Models.Campeon;
 import com.example.miguel.lolstats.R;
@@ -21,13 +20,11 @@ public class BuildFragment extends Fragment {
 
 
     public BuildFragment() {
-        // Required empty public constructor
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         Champion champ = (Champion)getArguments().get("champion");
 
         ChampionggApiHelper api = new ChampionggApiHelper();

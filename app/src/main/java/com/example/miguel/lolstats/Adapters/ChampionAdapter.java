@@ -1,28 +1,17 @@
 package com.example.miguel.lolstats.Adapters;
 
 import android.content.Context;
-import android.graphics.BitmapFactory;
-import android.graphics.BitmapRegionDecoder;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
-import android.os.Environment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.miguel.lolstats.R;
-
-import net.rithms.riot.api.RiotApi;
 import net.rithms.riot.api.endpoints.static_data.dto.Champion;
-
-import java.io.InputStream;
-import java.net.URL;
 import java.util.ArrayList;
 
 public class ChampionAdapter extends BaseAdapter {

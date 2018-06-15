@@ -6,8 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.miguel.lolstats.Adapters.RateAdapter;
 import com.example.miguel.lolstats.ApisHelper.ChampionggApiHelper;
@@ -21,7 +19,6 @@ import java.util.ArrayList;
 public class RateFragment extends Fragment {
 
     public RateFragment() {
-        // Required empty public constructor
     }
 
     @Override
